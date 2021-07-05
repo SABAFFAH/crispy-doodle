@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUT</title>
+
+    <style>
+
+
+  #navbar {
+  background: rgba(20, 80, 25, 5);
+  color: #fff;
+  overflow: auto;
+  font-family: cursive;
+  }
+
+  #navbar a {
+  color: rgb(221, 221, 233);
+  text-decoration: none;
+  }
+
+  #navbar h1 {
+  float: left;
+  padding-top: 10px;
+  }
+
+  #navbar ul {
+  list-style: none;
+  float: right;
+  }
+
+  #navbar ul li {
+  float: left;
+  }
+
+  #navbar ul li a {
+  display: block;
+  padding: 20px;
+  text-align: center;
+  }
+
+  #navbar ul li a:hover, 
+  #navbar ul li a.current {
+    background: rgba(1, 126, 78, 0.26);
+  color: rgb(74, 233, 153);
+  }
+
+  .container {
+  margin: auto;
+  max-width: 1100px;
+  overflow: auto;
+  padding: 0 20px;
+  }
+
+  a{text-decoration: none;}
+
+  #main-footer {
+  text-align: center;
+  background: green;
+  color: #fff;
+  padding: 20px;
+}
+
+body{
+  background-color: ghostwhite;
+  height: auto;
+}
+
+#main{
+  height: 60rem;
+  width: auto;
+  display: flex;
+  justify-content: space-around;
+  background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(../PICS/a2.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+#scroll{
+    width: 60%;
+    height: 400px;
+    background-color: rgba(221, 191, 133, 0);
+    border: 1px solid silver;
+    margin-top: 20px;
+    box-shadow: 1px 2px 5px 5px greenyellow;
+    border-radius: 10px;
+    opacity: 1;
+    backdrop-filter: blur(15px);
+    overflow: hidden;
+    overflow-y: scroll;
+    color: whitesmoke;
+    font-family: cursive;
+    padding: 5px;
+    
+}
+
+#glassmorphism{
+    width: 100%;
+    height: 450px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: transparent;
+}
+
+#glassmorphism .box{
+    position: relative;
+    width: 320px;
+    height: 330px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 30px;
+    transition: 0.5s;
+}
+
+#glassmorphism .box::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    border-radius: 8px;
+    transform: skewX(15deg);
+    transition: 0.5s;
+}
+
+#glassmorphism .box::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 50%;
+    height: 100%;
+    background: lime;
+    border-radius: 8px;
+    transform: skewX(15deg);
+    transition: 0.5s;
+    filter: blur(30px);
+    transition: 0.5s;
+}
+
+#glassmorphism .box:hover:before,
+#glassmorphism .box:hover:before{
+    transform: skewX(0deg);
+    left: 20px;
+    width: calc(100% - 90px);
+    background: limegreen;
+}
+
+#glassmorphism .box:nth-child(1):before,
+#glassmorphism .box:nth-child(1):before{
+    background: linear-gradient(315deg,#ffbc00,#ff0058);
+}
+
+#glassmorphism .box:nth-child(2):before,
+#glassmorphism .box:nth-child(2):before{
+    background: linear-gradient(315deg,#03a9f4,#ff0058);
+}
+
+#glassmorphism .box:nth-child(3):before,
+#glassmorphism .box:nth-child(3):before{
+    background: linear-gradient(315deg,#4dff03,#00d0ff);
+}
+
+
+.box-content{
+
+z-index: 1;
+}
+
+#glassmorphism .box .box-content{
+    position: relative;
+    left: 0;
+    background: linear-gradient(255,255.255,0.1);
+    backdrop-filter: blur(15px);
+    z-index: 1;
+    height: 250px;
+    border-radius: 8px;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: whitesmoke;
+    padding: 5px;
+    box-shadow: 1px 2px 5px 5px greenyellow;
+    font-family: cursive;
+    transition: 0.5s;
+}
+
+#glassmorphism .box .box-content:hover{
+    left: -25px;
+    padding: 60px 40px;
+    animation: animate 2s ease-in-out infinite;
+}
+
+@keyframes animate{
+    0%,100%
+    {
+        transform: translate(10px);
+    }
+    50%
+    {
+        transform: translate(-10px);
+    }
+}
+
+#scroll h2{
+    text-align: center;
+}
+
+     
+</style>
+</head>
+<body>
+
+  <header>
+    <nav id="navbar">
+      <div class="container">
+        <h1 class="logo" alt="Fast Biotechnological Crops"><a href="INDEX.HTML">FBC</a></h1>
+        <ul>
+          <li><a href="INDEX.HTML">HOME</a> </li>
+          <li><a href="GALLERY.HTML">GALLERY</a> </li>
+          <li><a href="ABOUT.HTML">ABOUT</a> </li>
+        </ul>
+      </div>  
+    </nav>
+  </header>
+
+  <div id="main">
+    <div id="scroll">
+        <h2>FBC; FAST BIOTECH CROPS</h2>
+        <p>
+            FBC provides you with fast crops produced from genetic mutations to solve problems pertaining agriculture, which are viruses, pests, slow rate yeild and much more. The crops are also muted of some genes to yeild bigger fruits, different shapes, color and sometimes taste.
+            Introduction For centuries, humans have been selecting, sowing, and harvesting seeds to produce food products that will sustain them. In this present age, global food demand has increased the need for improved crops. Biotechnology offers the needed technology to produce higher crop yields,
+            plants that are naturally protected from disease and insects, and potentially more nutritious and better tasting foods. A general definition of biotechnology is the use of a living organism or its products for commercial purposes. 
+            Today, biotechnology involves the use of techniques which take genetic material from one organism and put it into another, thus obtaining desired qualities or products. Crops produced by biotechnology include soybeans, corn, cotton, canola, papaya, tomatoes and squash. 
+            Also, an enzyme used to make cheese and yeast to make bread is commonly produced by biotechnology. Benefits of Biotechnology • Protection of the environment. Scientists have made some foods, such as papayas and potatoes, more resistant to disease.
+            These crops need less chemical spray to protect them from harmful insects or viruses, which is better for water and wildlife. Other crops are protected from herbicides that are used to control weeds, thus allowing farmers to conserve soil by tilling the ground less often. • Greater Crop Yields.
+            Farmers can use biotechnology to help plants survive, warding off insects and better tolerance to herbicides. This allows a better harvest from these hardier plants. • Better Tasting, Fresher Foods.
+            Sweeter peppers and tomatoes that ripen more slowly are examples of how biotechnology can produce fresher and better tasting food. • Grow more food on less land. By the year 2050, the earth’s population is estimated to be nine billion people. Using biotechnology, farmers can produce more crops on the land they already have.
+            This way, countries do not have to devote more land to farming. In turn, developing countries can benefit most, since they will have the largest population growth. • Keep food safe to eat. Scientists can more accurately find unwanted viruses and bacteria that may be present in food. 
+            This will cause an even lower risk of food-borne illnesses. Some types of fungus, which can be found in corn, release substances that can harm animals that eat them. These substances are already regulated in the United States, and biotechnology provides another tool that can help further reduce the amount of these substances in corn. 
+            • New food varieties. Biotechnology can extend advances in cross-breeding, allowing for new food varieties. For example, seedless melons and mini avocadoes. Farmers can also develop food with better flavour and a better nutrient profile. Health and Medical Benefits of Biotechnology 
+            • Modern food biotechnology may help promote public health, providing fruits, vegetables and grains with more nutritional benefits. These include more proteins, vitamins and minerals, or less fat and saturated fat. Already some oils have a better fatty acid profile, less saturated fat and trans-fat, and more monounsaturated fat.
+            This can promote heart health. • For those with food allergies, biotechnology is seeking ways to reduce allergens in peanuts, wheat and other crops. • Non-food applications of biotechnology may result someday in new vaccines and medications to treat heart disease, cancer and diabetes. 
+            For example, some fruits and vegetables will contain more antioxidants, such as vitamins C and E. Scientists have already developed a type of rice containing vitamin A and iron, thus reducing the risk of blindness and anaemia where this is a main staple in their diet. 
+            The Safety of Food Biotechnology The Food and Drug Administration (FDA), along with the Environmental Protection Agency (EPA) and the United States Department of Agriculture (USDA) combine to regulate genetically engineered foods. The FDA ensures that foods made from genetically engineered plants are safe for humans and animals to consume; 
+            the USDA makes sure the plants are safe to grow, and the EPA ensures that pesticides introduced into these plants are safe for both human and animal consumption and for the environment. Foods produced through either biotechnology or conventional methods must all meet the same high safety standards.
+        </p>
+    </div>
+    <div id="glassmorphism">
+        <div class="box">
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <p>In agriculture and gardening, hybrid seed is seed produced by cross-pollinated plants. Hybrid seed production is predominant in modern agriculture and home gardening.</p>
+                <a href="HYBRID CROPS.HTML">Read more</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-content">
+                <h3>VIRUS RESISTANT</h3>
+                <p>These are crops muted of some genes so they become resistant to virus,The introduction and expression of nucleotide sequences of
+                    non-viral origin in plants to confer virus resistance were made possible
+                    by gene splicing technologies. </p>
+                <a href="VR.HTML">Read more</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-content">
+                <h3>PEST RESISTANT</h3>
+                <p>Pest resistant crops are crops genetically modified so they are toxic certain insects,they are often called Bt crops because the introduced genes were originally identified in a bacterial species called bacillus</p>
+                <a href="PR.HTML">Read more</a>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  <footer id="main-footer">
+    <p>FBC &copy; 2021, All Rights Reserved</p>
+  </footer>
+</body>
+</html>

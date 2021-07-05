@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GALLERY</title>
+
+    <style>
+
+    
+  #navbar {
+  background:rgba(20, 80, 25, 5);
+  color: #fff;
+  overflow: auto;
+  font-family: cursive;
+  }
+
+  #navbar a {
+  color: rgb(221, 221, 233);
+  text-decoration: none;
+  }
+
+  #navbar h1 {
+  float: left;
+  padding-top: 10px;
+  }
+
+  #navbar ul {
+  list-style: none;
+  float: right;
+  }
+
+  #navbar ul li {
+  float: left;
+  }
+
+  #navbar ul li a {
+  display: block;
+  padding: 20px;
+  text-align: center;
+  }
+
+  #navbar ul li a:hover, 
+  #navbar ul li a.current {
+    background: rgba(1, 126, 78, 0.26);
+  color: rgb(74, 233, 153);
+  }
+
+  .container {
+  margin: auto;
+  max-width: 1100px;
+  overflow: auto;
+  padding: 0 20px;
+  }
+
+  a{text-decoration: none;}
+
+  #main-footer {
+  text-align: center;
+  background: green;
+  color: #fff;
+  padding: 20px;
+}
+
+body{
+  background-color: ghostwhite;
+}
+
+#glassmorphism{
+    width: 100%;
+    height: 100rem;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: transparent;
+}
+
+#glassmorphism .box{
+    position: relative;
+    width: 320px;
+    height: 330px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 30px;
+    transition: 0.5s;
+}
+
+#glassmorphism .box::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    border-radius: 8px;
+    transform: skewX(15deg);
+    transition: 0.5s;
+}
+
+#glassmorphism .box::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    border-radius: 8px;
+    transform: skewX(15deg);
+    transition: 0.5s;
+    filter: blur(30px);
+    transition: 0.5s;
+}
+
+#glassmorphism .box:hover:before,
+#glassmorphism .box:hover:before{
+    transform: skewX(0deg);
+    left: 20px;
+    width: calc(100% - 90px);
+}
+
+#glassmorphism .box:nth-child(1):before,
+#glassmorphism .box:nth-child(1):before{
+    background: linear-gradient(315deg,#ffbc00,#ff0058);
+}
+
+#glassmorphism .box:nth-child(2):before,
+#glassmorphism .box:nth-child(2):before{
+    background: linear-gradient(315deg,#03a9f4,#ff0058);
+}
+
+#glassmorphism .box:nth-child(3):before,
+#glassmorphism .box:nth-child(3):before{
+    background: linear-gradient(315deg,#4dff03,#00d0ff);
+}
+
+
+.box-content{
+
+z-index: 1;
+}
+
+#glassmorphism .box .box-content{
+    position: relative;
+    left: 0;
+    background: linear-gradient(255,255.255,0.1);
+    backdrop-filter: blur(15px);
+    z-index: 1;
+    height: 250px;
+    width: 300px;
+    border-radius: 8px;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: darkgreen;
+    padding: 3px;
+    box-shadow: 1px 2px 5px 5px greenyellow;
+    font-family: cursive;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+#glassmorphism .box .box-content:hover{
+    left: -25px;
+    padding: 60px 40px 60;
+    animation: animate 2s ease-in-out infinite;
+}
+
+@keyframes animate{
+    0%,100%
+    {
+        transform: translate(10px);
+    }
+    50%
+    {
+        transform: translate(-10px);
+    }
+}
+
+#glassmorphism .box-content{
+    position: relative;
+    width: 280px;
+    left: 0;
+    background: linear-gradient(255,255.255,0.1);
+    backdrop-filter: blur(15px);
+    z-index: 1;
+    height: 270px;
+    border-radius: 8px;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: darkgreen;
+    padding: 3px;
+    box-shadow: 1px 2px 5px 5px greenyellow;
+    font-family: cursive;
+    transition: 0.5s;
+    margin: 40px 30px;
+    overflow: hidden;
+}
+
+#glassmorphism .box-content:hover{
+    left: -25px;
+    padding: 60px 40px;
+    animation: animate 2s ease-in-out infinite;
+}
+.pics{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.box-content img{
+    height: 220px;
+    width: 100%;
+}
+
+     
+</style>
+</head>
+<body>
+
+  <header>
+    <nav id="navbar">
+      <div class="container">
+        <h1 class="logo" alt="Fast Biotechnological Crops"><a href="INDEX.HTML">FBC</a></h1>
+        <ul>
+          <li><a href="INDEX.HTML">HOME</a> </li>
+          <li><a href="GALLERY.HTML">GALLERY</a> </li>
+          <li><a href="ABOUT.HTML">ABOUT</a> </li>
+        </ul>
+      </div>  
+    </nav>
+  </header>
+    <div id="glassmorphism">
+        <div class="box">
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <p>All of the hybrid seeds planted by the farmer will produce similar plants, while the seeds of the next generation from those hybrids will not consistently have the desired characteristics.</p>
+                <a href="HYBRID CROPS.HTML">Read more</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-content">
+                <h3>VIRUS RESISTANT</h3>
+                <p>Conventional control strategies, such as cultural methods and biocide applications
+                    against insects vectors,
+                    have only limited success at mitigating the impact of plant viruses.</p>
+                <a href="VR.HTML">Read more</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="box-content">
+                <h3>PEST RESISTANT</h3>
+                <p>It respond to insect attack by upregulating the expression of PIs in plant which interfere with protein digestion,resulting in growth retardation or death of the insect pest.</p>
+                <a href="PR.HTML">Read more</a>
+            </div>
+        </div>
+            <div class="pics">
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <img src="../PICS/hybrids (1).jpg" alt="HYBRIDS">
+                <a href="HYBRID CROPS.HTML">Read more</a>
+            </div>
+
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <img src="../PICS/hybrids (2).jpg" alt="HYBRIDS">
+                <a href="VR.HTML">Read more</a>
+            </div>
+
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <img src="../PICS/hybrids (3).jpg" alt="HYBRIDS">
+                <a href="HYBRID CROPS.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <img src="../PICS/hybrids (4).jpg" alt="HYBRIDS">
+                <a href="HYBRID CROPS.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <img src="../PICS/hybrids (5).jpg" alt="HYBRIDS">
+                <a href="HYBRID CROPS.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <img src="../PICS/hybrids (6).jpg" alt="HYBRIDS">
+                <a href="HYBRID CROPS.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <img src="../PICS/hybrids (7).jpg" alt="HYBRIDS">                
+                <a href="HYBRID CROPS.HTML">Read more</a>
+            </div>
+
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <img src="../PICS/hybrids (8).jpg" alt="HYBRIDS">                
+                <a href="HYBRID CROPS.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <img src="../PICS/hybrids (9).jpg" alt="HYBRIDS">                
+                <a href="HYBRID CROPS.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <img src="../PICS/hybrids (10).jpg" alt="HYBRIDS">                
+                <a href="HYBRID CROPS.HTML">Read more</a>
+            </div>
+
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <img src="../PICS/hybrids (11).jpg" alt="HYBRIDS">                
+                <a href="HYBRID CROPS.HTML">Read more</a>
+            </div>
+
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <img src="../PICS/hybrids (12).jpg" alt="HYBRIDS">                
+                <a href="HYBRID CROPS.HTML">Read more</a>
+            </div>
+
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <img src="../PICS/hybrids (13).jpg" alt="HYBRIDS">                
+                <a href="HYBRID CROPS.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <img src="../PICS/hybrids (14).jpg" alt="HYBRIDS">
+                <a href="HYBRID CROPS.HTML">Read more</a>            
+            </div>
+
+
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <img src="../PICS/hybrids (15).jpg" alt="HYBRIDS">                
+                <a href="HYBRID CROPS.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <img src="../PICS/hybrids (16).jpg" alt="HYBRIDS">                
+                <a href="HYBRID CROPS.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <img src="../PICS/hybrids (17).jpg" alt="HYBRIDS">                
+                <a href="HYBRID CROPS.HTML">Read more</a>
+            </div>
+
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <img src="../PICS/hybrids (18).jpg" alt="HYBRIDS">                
+                <a href="HYBRID CROPS.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <img src="../PICS/hybrids (19).jpg" alt="HYBRIDS">                
+                <a href="HYBRID CROPS.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <img src="../PICS/hybrids (20).jpg" alt="HYBRIDS">                
+                <a href="HYBRID CROPS.HTML">Read more</a>
+            </div>
+
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <img src="../PICS/hybrids (21).jpg" alt="HYBRIDS">                
+                <a href="HYBRID CROPS.HTML">Read more</a>
+            </div>
+
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <img src="../PICS/hybrids (22).jpg" alt="HYBRIDS">                
+                <a href="HYBRID CROPS.HTML">Read more</a>
+            </div>
+
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <img src="../PICS/hybrids (23).jpg" alt="HYBRIDS">                
+                <a href="HYBRID CROPS.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <img src="../PICS/hybrid (24).jpg" alt="HYBRIDS">                
+                <a href="HYBRID CROPS.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <img src="../PICS/hybrid (25).jpg" alt="HYBRIDS">                
+                <a href="HYBRID CROPS.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <img src="../PICS/hybrid (26).jpg" alt="HYBRIDS">                
+                <a href="HYBRID CROPS.HTML">Read more</a>
+            </div>
+
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <img src="../PICS/hybrid (27).jpg" alt="HYBRIDS">                
+                <a href="HYBRID CROPS.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <img src="../PICS/hybrid (28).jpg" alt="HYBRIDS">                
+                <a href="HYBRID CROPS.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <img src="../PICS/hybrid (29).jpg" alt="HYBRIDS">                
+                <a href="HYBRID CROPS.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>HYBRID</h3>
+                <img src="../PICS/a1.jpg" alt="HYBRIDS">                
+                <a href="HYBRID CROPS.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>PEST RESISTANT</h3>
+                <img src="../PICS/a3.jpg" alt="PEST RESISTANT">               
+                <a href="PR.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>PEST RESISTANT</h3>
+                <img src="../PICS/pests (1).jpg" alt="PEST RESISTANT">               
+                <a href="PR.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>PEST RESISTANT</h3>
+                <img src="../PICS/pests (2).jpg" alt="PEST RESISTANT">               
+                <a href="PR.HTML">Read more</a>
+            </div>
+
+            <div class="box-content">
+                <h3>PEST RESISTANT</h3>
+                <img src="../PICS/pests (3).jpg" alt="PEST RESISTANT">               
+                <a href="PR.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>VIRUS RESISTANT</h3>
+                <img src="../PICS/diseased (1).jpg" alt="VIRUS RESISTANT">               
+                <a href="VR.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>VIRUS RESISTANT</h3>
+                <img src="../PICS/diseased (2).jpg" alt="VIRUS RESISTANT">               
+                <a href="VR.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>VIRUS RESISTANT</h3>
+                <img src="../PICS/diseased (3).jpg" alt="VIRUS RESISTANT">               
+                <a href="VR.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>VIRUS RESISTANT</h3>
+                <img src="../PICS/diseased (4).jpg" alt="VIRUS RESISTANT">               
+                <a href="VR.HTML">Read more</a>
+            </div>
+
+            <div class="box-content">
+                <h3>VIRUS RESISTANT</h3>
+                <img src="../PICS/diseased (5).jpg" alt="VIRUS RESISTANT">               
+                <a href="VR.HTML">Read more</a>
+            </div>
+
+            <div class="box-content">
+                <h3>VIRUS RESISTANT</h3>
+                <img src="../PICS/diseased (6).jpg" alt="VIRUS RESISTANT">               
+                <a href="VR.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>VIRUS RESISTANT</h3>
+                <img src="../PICS/diseased (7).jpg" alt="VIRUS RESISTANT">               
+                <a href="VR.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>VIRUS RESISTANT</h3>
+                <img src="../PICS/diseased (8).jpg" alt="VIRUS RESISTANT">               
+                <a href="VR.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>VIRUS RESISTANT</h3>
+                <img src="../PICS/diseased (9).jpg" alt="VIRUS RESISTANT">               
+                <a href="VR.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>VIRUS RESISTANT</h3>
+                <img src="../PICS/diseased (10).jpg" alt="VIRUS RESISTANT">               
+                <a href="VR.HTML">Read more</a>
+            </div>
+
+            <div class="box-content">
+                <h3>VIRUS RESISTANT</h3>
+                <img src="../PICS/diseased (11).jpg" alt="VIRUS RESISTANT">               
+                <a href="VR.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>VIRUS RESISTANT</h3>
+                <img src="../PICS/diseased (12).jpg" alt="VIRUS RESISTANT">               
+                <a href="VR.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>VIRUS RESISTANT</h3>
+                <img src="../PICS/diseased (13).jpg" alt="VIRUS RESISTANT">               
+                <a href="VR.HTML">Read more</a>
+            </div>
+
+            <div class="box-content">
+                <h3>VIRUS RESISTANT</h3>
+                <img src="../PICS/diseased (14).jpg" alt="VIRUS RESISTANT">               
+                <a href="VR.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>SEEDS</h3>
+                <img src="../PICS/seeds (1).jpg" alt="SEEDS">
+                <a href="ABOUT.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>SEEDS</h3>
+                <img src="../PICS/seeds (2).jpg" alt="SEEDS">
+                <a href="ABOUT.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>SEEDS</h3>
+                <img src="../PICS/seeds (3).jpg" alt="SEEDS">
+                <a href="ABOUT.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>SEEDS</h3>
+                <img src="../PICS/seeds (4).jpg" alt="SEEDS">
+                <a href="ABOUT.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>SEEDS</h3>
+                <img src="../PICS/seeds (5).jpg" alt="SEEDS">
+                <a href="ABOUT.HTML">Read more</a>
+            </div>
+
+            <div class="box-content">
+                <h3>SEEDS</h3>
+                <img src="../PICS/seeds (6).jpg" alt="SEEDS">
+                <a href="ABOUT.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>SEEDS</h3>
+                <img src="../PICS/seeds (7).jpg" alt="SEEDS">
+                <a href="ABOUT.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>SEEDS</h3>
+                <img src="../PICS/seeds (8).jpg" alt="SEEDS">
+                <a href="ABOUT.HTML">Read more</a>
+            </div>
+
+            <div class="box-content">
+                <h3>SEEDS</h3>
+                <img src="../PICS/seed (9).jpg" alt="SEEDS">
+                <a href="ABOUT.HTML">Read more</a>
+            </div>
+
+            <div class="box-content">
+                <h3>SEEDS</h3>
+                <img src="../PICS/seed (10).jpg" alt="SEEDS">
+                <a href="ABOUT.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>SEEDS</h3>
+                <img src="../PICS/seed (11).jpg" alt="SEEDS">
+                <a href="ABOUT.HTML">Read more</a>
+            </div>
+
+            <div class="box-content">
+                <h3>SEEDS</h3>
+                <img src="../PICS/seed (12).jpg" alt="SEEDS">
+                <a href="ABOUT.HTML">Read more</a>
+            </div>
+
+            <div class="box-content">
+                <h3>SEEDS</h3>
+                <img src="../PICS/seed (13).jpg" alt="SEEDS">
+                <a href="ABOUT.HTML">Read more</a>
+            </div>
+
+            <div class="box-content">
+                <h3>SEEDS</h3>
+                <img src="../PICS/seed (14).jpg" alt="SEEDS">
+                <a href="ABOUT.HTML">Read more</a>
+            </div>
+
+            <div class="box-content">
+                <h3>SEEDS</h3>
+                <img src="../PICS/a4.jpg" alt="SEEDS">
+                <a href="ABOUT.HTML">Read more</a>
+            </div>
+
+            <div class="box-content">
+                <h3>SAMPLE</h3>
+                <img src="../PICS/samples (1).jpg" alt="SAMPLES">
+                <a href="ABOUT.HTML">Read more</a>
+            </div>
+
+            <div class="box-content">
+                <h3>SAMPLE</h3>
+                <img src="../PICS/samples (2).jpg" alt="SAMPLES">
+                <a href="ABOUT.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>SAMPLE</h3>
+                <img src="../PICS/samples (3).jpg" alt="SAMPLES">
+                <a href="ABOUT.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>SAMPLE</h3>
+                <img src="../PICS/samples (4).jpg" alt="SAMPLES">
+                <a href="ABOUT.HTML">Read more</a>
+            </div>
+
+            <div class="box-content">
+                <h3>SAMPLE</h3>
+                <img src="../PICS/samples (5).jpg" alt="SAMPLES">
+                <a href="ABOUT.HTML">Read more</a>
+            </div>
+
+            <div class="box-content">
+                <h3>BIOTECH</h3>
+                <img src="../PICS/bio (1).jpg" alt="BIOTECH">
+                <a href="ABOUT.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>BIOTECH</h3>
+                <img src="../PICS/bio (2).jpg" alt="BIOTECH">
+                <a href="ABOUT.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>BIOTECH</h3>
+                <img src="../PICS/bio (3).jpg" alt="BIOTECH">
+                <a href="ABOUT.HTML">Read more</a>
+            </div>
+
+            <div class="box-content">
+                <h3>BIOTECH</h3>
+                <img src="../PICS/bio (4).jpg" alt="BIOTECH">
+                <a href="ABOUT.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>BIOTECH</h3>
+                <img src="../PICS/bio (5).jpg" alt="BIOTECH">
+                <a href="ABOUT.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>BIOTECH</h3>
+                <img src="../PICS/bio (6).jpg" alt="BIOTECH">
+                <a href="ABOUT.HTML">Read more</a>
+            </div>
+
+            <div class="box-content">
+                <h3>BIOTECH</h3>
+                <img src="../PICS/bio (7).jpg" alt="BIOTECH">
+                <a href="ABOUT.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>BIOTECH</h3>
+                <img src="../PICS/bio (8).jpg" alt="BIOTECH">
+                <a href="ABOUT.HTML">Read more</a>
+            </div>
+
+            <div class="box-content">
+                <h3>BIOTECH</h3>
+                <img src="../PICS/bio (9).jpg" alt="BIOTECH">
+                <a href="ABOUT.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>BIOTECH</h3>
+                <img src="../PICS/bio (10).jpg" alt="BIOTECH">
+                <a href="ABOUT.HTML">Read more</a>
+            </div>
+
+
+            <div class="box-content">
+                <h3>BIOTECH</h3>
+                <img src="../PICS/a2.jpg" alt="BIOTECH">
+                <a href="ABOUT.HTML">Read more</a>
+            </div>
+
+            </div>
+
+    </div>
+  </div>
+</body>
+</html>
